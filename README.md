@@ -17,5 +17,5 @@ Bem Vindo ao nosso Projeto de IHC - FATEC SJC - 2020
     
    
 #### Visualização
-![](IztUqFI.gif)
+![](aviao.gif)
 
