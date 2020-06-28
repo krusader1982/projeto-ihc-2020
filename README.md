@@ -10,7 +10,7 @@ Samuel Xavier
 Vitor Amorim
 ```
 
-
+### :round_pushpin:
 ### ← Veja nosso projeto no [Glitch](https://ihc-projeto2.glitch.me/)
 -------------------
 
