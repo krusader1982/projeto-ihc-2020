@@ -10,6 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/handtrackjs/dist/handtrack.min.js"></script> 
     <script src="https://unpkg.com/aframe-aabb-collider-component@3.1.0/dist/aframe-aabb-collider-component.min.js"></script>
     <script src="https://unpkg.com/aframe-area-light-component/dist/aframe-area-light-component.min.js"></script> <!-- pesado usar só para desktop -->
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.1/dist/aframe-extras.min.js" ></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@^0.5.1/dist/aframe-event-set-component.min.js"></script>
    
 <p hidden> contador2: <span id="count2">0</span></p>
     
@@ -108,29 +112,33 @@ intensity: 0.79; shadowCameraNear: 0.38; shadowCameraBottom: -0.49; shadowRadius
     <!-- IMAGENS -->
 <!-- carregando imagens que estão sendo usadas na quadro de fundo -->
 <img id="img1" crossorigin="" src="https://images-na.ssl-images-amazon.com/images/I/71dIGcFhMIL._AC_SL1001_.jpg" > 
-<img id="img2" crossorigin="" src="https://t3.ftcdn.net/jpg/01/99/33/12/240_F_199331210_yNekHPBgSlsA9VdVbj4aO0PU1dMWijpW.jpg" > 
+<!--<img id="return" crossorigin="" src="hhttps://cdn.glitch.com/adc216fb-6484-4f79-aec3-18e39ebae3a2%2Freturn.jpg?v=1593314702623" >--> 
 <a-image look-at="#player1" id="image1" src="#img1" scale = "1.520 2 2"  transparent="true" position="7.52 2.54 -2.54" visible="true" width="2"></a-image> 
-<a-image look-at="#player2"  id="image2" src="#img2" scale = "3.02 2.02 1.650"  transparent="true" position="1.51 2.53 -2.56" visible="false"></a-image> 
     <!-- IMAGENS SEGUNDA MOLDURA -->
 
 <img id="img1-1" crossorigin="" src="https://cdn.glitch.com/adc216fb-6484-4f79-aec3-18e39ebae3a2%2Fasa%20avi%C3%A3o.jpg?v=1591921359845"> 
 <img id="img2-1" crossorigin="" src="https://cdn.glitch.com/adc216fb-6484-4f79-aec3-18e39ebae3a2%2Fcalda%20avi%C3%A3o.jpg?v=1591921376684">  
 <img id="img3-1" crossorigin="" src="https://cdn.glitch.com/adc216fb-6484-4f79-aec3-18e39ebae3a2%2Fcorpo%20avi%C3%A3o.jpg?v=1591921386840">   
 <img id="img4-1" crossorigin="" src="https://cdn.glitch.com/adc216fb-6484-4f79-aec3-18e39ebae3a2%2Fhelice.jpg?v=1591921400393"> 
+<img id="return" crossorigin="" src="https://cdn.glitch.com/adc216fb-6484-4f79-aec3-18e39ebae3a2%2Freturn.jpg?v=1593314702623">
 <img id="montagem" crossorigin="" src="https://cdn.glitch.com/adc216fb-6484-4f79-aec3-18e39ebae3a2%2FMontagem.jpg?v=1592390940275">
+
     
     
     
     <a-image src="#montagem" scale="0.4 1.5 1.5" position="13 1.5 0.5" rotation="-30 300 0" visible="true" checkpoint="offset:0 -1 0"></a-image>
     
-    <a-box id="caixa" color="aa0000" position="-8 1 1" checkpoint></a-box>
+    
 
 
 <a-image look-at="#player1" id="image1-1" src="#img1-1" scale="0.37 2.01 2" transparent="true" position="11.183 2.54 -2.54" visible="true" width="2" material="" geometry=""></a-image>
 <a-image look-at="#player2" id="image2-1" src="#img2-1" scale="0.37 2.01 2" transparent="true" position="11.974 2.54 -2.54" visible="true" width="2" material="" geometry=""></a-image>
     <a-image look-at="#player3" id="image3-1" src="#img3-1" scale="0.37 2.01 2" transparent="true" position="12.759 2.54 -2.54" visible="" width="2" material="" geometry=""></a-image>
     <a-image look-at="#player4" id="image4-1" src="#img4-1" scale="0.32 2.01 2" transparent="true" position="13.495 2.54 -2.54" visible="" width="2" material="" geometry=""></a-image>
-<!-- IMAGENS PISO -->
+<a-image look-at="#player5" id="image5-1" src="#return" scale="0.7 .9 2" transparent="true" position="4.75 0.765 -2.28" visible="" width="2" material="" geometry="" checkpoint="offset:0 -0.8 8"></a-image>
+
+    
+    <!-- IMAGENS PISO -->
   <img id="pisoImg1" crossorigin="" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/Piso%20imagem/passos.png">   
   <img id="pisoImg2" crossorigin="" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/Piso%20imagem/passos2.png"> 
     
@@ -142,6 +150,7 @@ intensity: 0.79; shadowCameraNear: 0.38; shadowCameraBottom: -0.49; shadowRadius
     <a-image look-at="#player1" id="pisoImagem3" src="#pisoImg1" scale="0.89 0.39 1.81" transparent="true" position="3.23674 0.20542 2.98036" visible="false" width="2" material="side: back; wireframeLinewidth: 20" geometry="" rotation="90 0 0"></a-image>
     
     <a-image look-at="#player2" id="pisoImagem4" src="#pisoImg2" scale="0.43 0.34 1.81" transparent="true" position="1.20136 0.20542 2.96398" visible="false" width="2" material="side: back; wireframeLinewidth: 20" geometry="" rotation="90 0 0"></a-image>
+    
     
     
 <!-- --------------------------------------------------------------------------- -->    
@@ -160,19 +169,77 @@ intensity: 0.79; shadowCameraNear: 0.38; shadowCameraBottom: -0.49; shadowRadius
 src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/alerta_selecao.gltf" position="10.46186 -0.0378 -2.63003" visible="false" model-opacity="1" animation="property: model-opacity; to: 0.0; loop: 
 4; dur: 1000" scale="3.22 0.99 1.36"> </a-gltf-model>
     
-    <!-- carregando os moedelos gltf -->
-    <a-gltf-model id ="peca1" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/1.2.gltf" shadow="cast: true" position = "10 1 0" rotation="0 0 0" scale="7 7 7"  > </a-gltf-model> <!--"shadow="cast: true" habilita sombra dinamica -->
-    <a-gltf-model id ="peca2" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/2.2.gltf" position = "0 0 0" rotation="0 0 0" scale="1 1 1" visible="false" shadow="cast: false"> </a-gltf-model>   <!--"shadow="cast: true" habilita sombra dinamica -->
-    <a-gltf-model id ="peca3" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/3.2.gltf" position = "0 0 0" rotation="0 0 0" scale="1 1 1" visible="false" shadow="cast: false"> </a-gltf-model>  <!--"shadow="cast: true" habilita sombra dinamica -->
-    <a-gltf-model id ="peca4" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/4.2.gltf" position = "0 0 0" rotation="0 0 0" scale="1 1 1" visible="false" shadow="cast: false"> </a-gltf-model> <!--"shadow="cast: true" habilita sombra dinamica -->
-
+    <!-- carregando os moedelos gltf do Kurt
+    <a-gltf-model id ="peca1" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/1.2.gltf" shadow="cast: true" position = "0 1 0" rotation="0 0 0" scale="1 1 1" visible="true" > </a-gltf-model> 
+    <a-gltf-model id ="peca2" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/2.2.gltf" position = "0 0 0" rotation="0 1 0" scale="1 1 1" visible="true" shadow="cast: false"> </a-gltf-model>   
+    <a-gltf-model id ="peca3" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/3.2.gltf" position = "0 0 0" rotation="0 1 0" scale="1 1 1" visible="true" shadow="cast: false"> </a-gltf-model>  
+    <a-gltf-model id ="peca4" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/4.2.gltf" position = "0 0 0" rotation="0 1 0" scale="1 1 1" visible="true" shadow="cast: false"> </a-gltf-model> -->
+    
     <!-- PEÇAS PARA O TABLADO 2 -->    
     
     <a-gltf-model id ="peca1_1" src="https://cdn.glitch.com/adc216fb-6484-4f79-aec3-18e39ebae3a2%2Fasa%20avi%C3%A3o.glb?v=1591919783327" position = "10.2 1.5 -1" rotation="0 0 0" scale="4 4 4" visible="false"> </a-gltf-model> <!--"shadow="cast: true" habilita sombra dinamica -->
     <a-gltf-model id ="peca2_2" src="https://cdn.glitch.com/adc216fb-6484-4f79-aec3-18e39ebae3a2%2Fcalda%20avi%C3%A3o.glb?v=1591919802337" position = "10.2 1.5 -1" rotation="0 0 0" scale="4 4 4" visible="false"> </a-gltf-model>   <!--"shadow="cast: true" habilita sombra dinamica -->
     <a-gltf-model id ="peca3_3" src="https://cdn.glitch.com/adc216fb-6484-4f79-aec3-18e39ebae3a2%2Fcorpo%20avi%C3%A3o.glb?v=1591919813807" position = "10.2 1.5 -1" rotation="0 0 0" scale=" 4 4 4" visible="false"> </a-gltf-model>  <!--"shadow="cast: true" habilita sombra dinamica -->
     <a-gltf-model id ="peca4_4" src="https://cdn.glitch.com/adc216fb-6484-4f79-aec3-18e39ebae3a2%2Fhelice.glb?v=1591919826343" position = "10.2 1.5 -1" rotation="0 0 0" scale="4 4 4" visible="false"  > </a-gltf-model> 
+    <a-gltf-model id ="aviao" src="https://cdn.glitch.com/adc216fb-6484-4f79-aec3-18e39ebae3a2%2Favi%C3%A3o.glb?v=1593305104890" position = "0.2 1.5 -1" rotation="0 0 0" scale="5 5 5" visible="true"  > </a-gltf-model> 
+    
+    
     <!-- "shadow="cast: true" habilita sombra dinamica -->
+    
+    <a-gltf-model
+                id="setaEsquerda"
+                src="https://cdn.glitch.com/db489dbe-6eab-4aa3-85e2-d5623c8272d1%2Fleft.glb?v=1590818047265"
+                position="-1 0.3 0.9"
+                rotation="0 0 0"
+                scale="1.5 1.5 1.5"
+                visible="true"
+      ></a-gltf-model>
+    
+    <a-gltf-model
+                id="setaDireita"
+                src="https://cdn.glitch.com/db489dbe-6eab-4aa3-85e2-d5623c8272d1%2Fright.glb?v=1590818058825"
+                position="-0.6 0.3 0.9"
+                rotation="0 0 0"
+                scale="1.5 1.5 1.5"
+                visible="true"
+      ></a-gltf-model>
+        
+    <a-gltf-model
+                id="setaBaixo"
+                src="https://cdn.glitch.com/db489dbe-6eab-4aa3-85e2-d5623c8272d1%2Fdown.glb?v=1590818034372"
+                position="-0.2 0.3 0.9"
+                rotation="0 0 0"
+                scale="1.5 1.5 1.5"
+                visible="true"
+      ></a-gltf-model>
+    
+    <a-gltf-model
+                id="setaCima"
+                src="https://cdn.glitch.com/db489dbe-6eab-4aa3-85e2-d5623c8272d1%2Fup.glb?v=1590818070089"
+                position="0.2 0.3 0.9"
+                rotation="0 0 0"
+                scale="1.5 1.5 1.5"
+                visible="true"
+      ></a-gltf-model>
+    
+    <a-gltf-model
+                id="aparecer"
+                src="https://cdn.glitch.com/db489dbe-6eab-4aa3-85e2-d5623c8272d1%2Fbtngreen.glb?v=1590817992293"
+                position="0.6 0.3 0.9"
+                rotation="0 0 0"
+                scale="1.5 1.5 1.5"
+                visible="true"
+      ></a-gltf-model>
+    
+    <a-gltf-model
+                id="desaparecer"
+                src="https://cdn.glitch.com/db489dbe-6eab-4aa3-85e2-d5623c8272d1%2Fbtnred.glb?v=1590818021302"
+                position="1 0.3 0.9"
+                rotation="0 0 0"
+                scale="1.5 1.5 1.5"
+                visible="true"
+      ></a-gltf-model>
+
     
 <!----------------------------------- -->     
 <a-assets > <!-- wait loading -->
@@ -191,22 +258,49 @@ src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%20
     
 <!----------------------------------- -->        
       
-<a-gltf-model src="#tablado" shadow="cast: true;" position="0 0.1 0" visible="false"> </a-gltf-model>
+<a-gltf-model src="#tablado" shadow="cast: true;" position="0 0.1 0" visible="true"> </a-gltf-model>
 <a-gltf-model src="#tablado" shadow="cast: false;" position="10 0.1 0"> </a-gltf-model> <!-- TABLADO 2-->   
 <a-gltf-model src="#hangar" shadow="cast: false;" position="0 0.1 0"> </a-gltf-model>
 <a-gltf-model src="#hangarPiso" shadow="cast: false;" position="0 0.1 0"> </a-gltf-model> 
-<a-gltf-model src="#hangarViga" shadow="cast: true;" position="0 0.1 0"> </a-gltf-model>    
+<a-gltf-model src="#hangarViga" shadow="cast: true;" position="0 0.1 0"> </a-gltf-model> 
     
-     
+    <!--PROJETO IHC-->
+    <a-box scale= "3 1 0.3" position="5 2.5 4"> 
+      <a-entity position="0 0 0.7" text="value:PROJETO IHC\n \nFABRICIO JONATAS RAFAEL SAMUEL VITOR; color:#212121; align: center; wrapCount:15"></a-entity> 
+      <a-entity position="0 -0.4 0.7" text="value:Escolha um projeto para interagir; color:#212121; align: center; wrapCount:30"></a-entity>
+    </a-box>
+    
+    <!--PROJETO I-->
+    <a-box scale= "1 0.5 0.1" position="7 0.5 4" 
+           event-set__enter="_event:mouseenter; material.color: #32CD32" event-set__leave="_event:mouseleave; material.color: #FFffff"
+           checkpoint="offset:3 0 -1">
+      <a-entity position="0 0 0.7" text="value:PROJETO I; color:#212121; align: center; wrapCount:15"></a-entity>
+    </a-box>
+    <a-box scale= "3 1 0.1" position="12.35 4.15 -2.6"> <a-entity position="0 0 0.7" text="value:Clique nas imagens para interagir; color:#212121; align: center; wrapCount:10"></a-entity></a-box>
+    
+    
+    <!--PROJETO II--> 
+    <a-box scale= "1 0.5 0.1" position="3 0.5 4"
+           event-set__enter="_event:mouseenter; material.color: #32CD32" event-set__leave="_event:mouseleave; material.color: #FFFFFF"
+            checkpoint="offset:-3 0 0"> 
+      <a-entity position="0 0 0.7" text="value:PROJETO II; color:#212121; align: center; wrapCount:10"></a-entity>
+    </a-box>
+        
+    <a-box scale= "1 2 0.1" position="-2.5 1 0"> <a-entity position="0 0 0.7" text="value:Utilize as setas para interagir; color:#212121; align: center; wrapCount:10"></a-entity></a-box>
+    
+      
+    
  <!-- ========= Decoração ================================================ -->
-     <a-gltf-model id ="trolley" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/trolley.01.gltf" position = "0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true" shadow="cast: true" > </a-gltf-model>
+     <a-gltf-model id ="trolley" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/trolley.01.gltf" position = "-3 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true" shadow="cast: true" > </a-gltf-model>
     
-     <a-gltf-model id ="portatrolley" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/PORTAtrolley.01.gltf" position = "0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true" > </a-gltf-model>
+     <a-gltf-model id ="portatrolley" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/PORTAtrolley.01.gltf" position = "-3 0.1 0" rotation="0 0 0" scale="1 1 1" visible="true" > </a-gltf-model>
     
     <a-gltf-model id ="moldura" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/moldura-1.gltf" visible="true" position = "6 0 0" shadow="cast: false"> </a-gltf-model>
     
     <a-gltf-model id ="moldura2" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/moldura-1.gltf" visible="true" position = "10.826 0 0" shadow="cast: false"> </a-gltf-model>
     
+    <a-gltf-model id ="moldura3" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/moldura-1.gltf" visible="true" scale="0.5 0.5 0.5" position = "4 -0.5 -1" shadow="cast: false"> </a-gltf-model>
+        
     <a-gltf-model id="extintor" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/extintor.gltf" visible="" position="-2.92379 0.34635 8.70807" shadow="cast: false" scale="1.13 1.03 1.13"> </a-gltf-model>
     
     <a-gltf-model id="cidade" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/cidade.gltf" position="22.76 0.464 -3.468"> </a-gltf-model>
@@ -231,7 +325,7 @@ src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%20
     
     <!-- CURSOR -->
  
- <a-entity position="10 0 3" id="CameraPosition"
+ <a-entity position="5 0 6" id="CameraPosition"
            movement-controls="controls: checkpoint"
 	         checkpoint-controls="mode: animate">
 	      <a-entity progressive-controls></a-entity>
@@ -273,13 +367,13 @@ src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%20
     <a-gltf-model id="alerta" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/alerta_selecao.gltf" position="10.59186 -0.0378 -2.46437" rotation="" scale="" visible="false"> </a-gltf-model>
     
     <!-- SETAS DE ROTAÇÃO -->
-    <!-- chamada de modelos 3d usados como botões -->
+    <!-- chamada de modelos 3d usados como botões 
     
     <a-gltf-model id ="setaEsquerda" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/arrow-left.gltf" position = "0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="false"> </a-gltf-model>
     <a-gltf-model id ="setaEsquerda0" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/arrow-left0.gltf" position = "0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="false" shadow="cast: true;"> </a-gltf-model>
     <a-gltf-model id ="setaDireita" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/arrow-right.gltf" position = "0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="false"> </a-gltf-model>
     <a-gltf-model id ="setaDireita0" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/arrow-right0.gltf" position = "0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="false" shadow="cast: true;"> </a-gltf-model>
-    <!-- ------------------------------------ -->
+     -->
     <!-- TRAS -->
     
     <a-gltf-model id ="tras" src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%203D%20Porta%20avi%C3%A3o/atras.gltf" position = "0 0.1 0" rotation="0 0 0" scale="1 1 1" visible="false" > </a-gltf-model>
@@ -355,7 +449,11 @@ src="https://raw.githubusercontent.com/KurtRodrigues/Project01/master/modelos%20
       <button3 class="button3" id="trackbutton" disabled onclick="toggleVideo()">
     
    </button3>  -->
-<!--=============================================================-->    
+<!--=============================================================--> 
+    
+    <a-camera>
+              <a-cursor></a-cursor>
+            </a-camera>
     </a-scene>
   </body>
 </html>
